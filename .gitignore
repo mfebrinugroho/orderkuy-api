@@ -3,6 +3,7 @@
 .env.*
 cloudrun.env.yaml
 kaserva-gcloud-run.md
+kaserva-cicd-cloud-run.md
 .phpactor.json
 .phpunit.result.cache
 /.fleet
