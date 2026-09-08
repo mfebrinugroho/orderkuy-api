@@ -29,7 +29,8 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:225'
+            'name' => 'required|string|max:225',
+            'slug' => 'required|string|max:225|unique:roles,slug',
         ]);
 
         $role = Role::create($validated);

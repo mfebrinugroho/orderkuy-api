@@ -5,19 +5,17 @@ namespace App\Http\Controllers\Api\V1\Staff;
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\StoreResource;
-use App\Http\Resources\UserOwnerResource;
 use App\Http\Resources\UserResource;
 use App\Models\Store;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Gate;
 
 class StoreOwnerController extends Controller
 {
     public function addOwner(Request $request)
     {
-        Gate::authorize('addOwner', Store::class);
+        // Gate::authorize('addOwner', Store::class);
 
         $validated = $request->validate([
             'store_id' => ['required', 'exists:stores,id'],
